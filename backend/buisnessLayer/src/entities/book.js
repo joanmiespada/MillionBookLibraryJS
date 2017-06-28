@@ -1,12 +1,9 @@
 
 
 class book
-{
-	//aux=[];
-
-	test(){
-		return 1; 
-	}
+{	
+	
+	
 
 }
 
