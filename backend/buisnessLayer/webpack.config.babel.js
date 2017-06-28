@@ -19,15 +19,12 @@ export default {
   externals: [],
   module: {
     loaders: [
-      // babel loader, testing for files that have a .js extension
-      // (except for files in our node_modules folder!).
+      
       {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: ["babel-loader","eslint-loader"],
-       /* query: {
-          compact: false // because I want readable output
-        }*/
+       
       }
       
     ]

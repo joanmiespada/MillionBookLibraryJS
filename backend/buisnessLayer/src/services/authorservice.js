@@ -3,15 +3,21 @@ import service from './service'
 class authorservice extends service
 {
 
-    GetAllAuthors(pageinit,pagesize)
+    constructor()
     {
-        return { totalize:0, items:[]}; 
+        super();
     }
 
-    GetAuthorByGender(gender, pageinit,pagesize)
+    GetAllAuthors(pageinit, pagesize)
+    {
+        return { totalize:this.list.length, items:this.list}; 
+    }
+
+    GetAuthorByGender(gender, pageinit, pagesize)
     {
         return { totalize:0, items:[]}; 
     }
+    
     
 
 
