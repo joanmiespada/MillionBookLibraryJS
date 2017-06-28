@@ -24,11 +24,12 @@ export default {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
-        query: {
+        loader: ["babel-loader","eslint-loader"],
+       /* query: {
           compact: false // because I want readable output
-        }
+        }*/
       }
+      
     ]
   },
   plugins: [

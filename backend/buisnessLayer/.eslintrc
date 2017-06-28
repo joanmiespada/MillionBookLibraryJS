@@ -6,10 +6,10 @@
     "es6": true
   },
   "rules": {
-    "no-console": 0
+    
   },
   "globals": {
 
-  },
-  "extends": "eslint:recommended"
+  }//,
+  //"extends": "eslint:recommended"
 }
