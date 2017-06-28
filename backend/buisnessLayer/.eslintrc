@@ -6,10 +6,10 @@
     "es6": true
   },
   "rules": {
-    
+    "no-unused-vars":"warn"
   },
   "globals": {
 
-  }//,
-  //"extends": "eslint:recommended"
+  },
+  "extends": "eslint:recommended"
 }

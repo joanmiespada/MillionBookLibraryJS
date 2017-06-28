@@ -28,6 +28,11 @@ class bookservice extends service
         return { totalize:0, items:[]};
     }
 
+    save()
+    {
+            
+    }
+
     
 
 

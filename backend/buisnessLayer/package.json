@@ -27,6 +27,6 @@
   "scripts": {
     "build": "./node_modules/.bin/webpack --config webpack.config.babel.js",
     "test": "./node_modules/.bin/cucumber.js --compiler js:babel-core/register",
-    "seeddata": "node ./src/seeddata/seed.js"
+    "seeddata": "node -r babel-register ./src/seeddata/seed.js"
   }
 }
