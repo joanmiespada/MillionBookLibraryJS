@@ -51,7 +51,7 @@ class Seed{
     
     GenerateOneMillionBooks(authorservice)
     {
-        const TOTAL = 100;
+        const TOTAL = 1000000;
 
         let bookservice = new BookService();
 
