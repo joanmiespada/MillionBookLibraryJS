@@ -1,19 +1,8 @@
-import entity from './entity'
+import namedentity from './namedentity'
 
-class book extends entity
+class book extends namedentity
 {	
 	
-	get name()
-	{
-		return this._name;
-	}
-	set name(n)
-	{
-		if(n){
-			this._name=n;
-		}
-	}
-
 	get author()
 	{
 		return this._author;
