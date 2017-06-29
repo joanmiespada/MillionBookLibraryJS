@@ -1,18 +1,15 @@
-'use strict';
-
 import {defineSupportCode} from 'cucumber'
 import chai from 'chai'
-//var {defineSupportCode} = require('cucumber');
 import Book from '../../src/entities/book'
+import Author from '../../src/entities/author'
 
 defineSupportCode(function({Given, When, Then}) {
-    //setWorldConstructor(CustomWorld)
-    let book;
+   
 
   Given(/^I want to create a new book$/, function() {
     
     this.book = null;
-    //callback();
+   
   });
 
   When(/^I create new instance with name (.*), author (.*), genre (.*) and publish date today$/, 
@@ -22,16 +19,20 @@ defineSupportCode(function({Given, When, Then}) {
 
             this.book = new Book()
             this.book.name =name
-            this.book.author = author
+            
             this.book.genre = genre
             this.book.publishdate = Date.now()
             
+            let authorNew = new Author()
+            authorNew.name= author
+            this.book.author = authorNew
+
             callback()
           });
 
   Then(/^I should get a book instance ready for use$/, function () {
     chai.expect(this.book.name).to.equal( this.aux.name);
-    chai.expect(this.book.author).to.equal( this.aux.author);
+    chai.expect(this.book.author.name).to.equal( this.aux.author);
     chai.expect(this.book.genre).to.equal( this.aux.genre);
     
     

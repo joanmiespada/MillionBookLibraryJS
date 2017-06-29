@@ -3,6 +3,10 @@ import service from './service'
 class bookservice extends service
 {
 
+    static get ONEMILLION(){
+        return 1000000;
+    }
+
     GetAllBooks(pageinit,pagesize)
     {
         return { totalize:0, items:[]}; 
@@ -27,6 +31,7 @@ class bookservice extends service
     {
         return { totalize:0, items:[]};
     }
+
 
 
     

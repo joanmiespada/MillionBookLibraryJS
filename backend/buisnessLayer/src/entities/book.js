@@ -3,6 +3,11 @@ import namedentity from './namedentity'
 class book extends namedentity
 {	
 	
+	static get genreTypes()
+	{
+		return ["love", "horror", "finance", "politics", "science"]
+	}
+
 	get author()
 	{
 		return this._author;

@@ -7,11 +7,17 @@ class service
     }
     Save(newItemsList)
     {
-        let value = this.list.length;
+      /*  let value = this.list.length;
+
+        newItemsList.forEach(function(element) {
+            element.Id =++value;
+        }, this);
 
         let newlist= newItemsList.map(x=>{ let aux = Object.assign({},x); aux.Id = ++value; return aux });
 
-        this.list = Object.assign({},this.list,newlist);
+        this.list = Object.assign({},this.list,newItemsList);
+        */
+       this.list=newItemsList
     }
 
     GetAt(index)
