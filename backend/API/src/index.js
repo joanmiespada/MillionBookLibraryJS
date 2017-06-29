@@ -1,4 +1,5 @@
 import express from 'express'
+import request from './request'
 
 class API
 {
@@ -16,6 +17,8 @@ class API
 
     start()
     {
+        let rq = new request();
+        rq.pepe();
         this.app.listen(3000, function () {
             console.log('Example app listening on port 3000!');
             });

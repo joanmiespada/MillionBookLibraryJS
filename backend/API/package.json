@@ -18,5 +18,9 @@
   "dependencies": {
     "express": "^4.15.3",
     "webpack": "^3.0.0"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js --progress --colors",
+    "start": "babel-node ./src/index.js"
   }
 }
