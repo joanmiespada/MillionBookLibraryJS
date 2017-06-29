@@ -18,18 +18,18 @@ class _businesslibrary
 
     }
 
-    test()
+    /*test()
     {
         
         let res = this.authorservice.GetAuthorByGender('male')
         console.log(res)
         res = this.authorservice.GetAuthorByGender('female')
         console.log(res)
-    }
+    }*/
 
 }
 
 var businesslibrary = new _businesslibrary()
-businesslibrary.test()
+//businesslibrary.test()
 
 export default businesslibrary
