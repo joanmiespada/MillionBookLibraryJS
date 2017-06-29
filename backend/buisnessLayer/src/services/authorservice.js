@@ -1,4 +1,6 @@
 import service from './service'
+import exception from '../exceptions/exception'
+
 
 class authorservice extends service
 {
@@ -8,22 +10,20 @@ class authorservice extends service
         super();
     }
 
-    GetAllAuthors(pageinit, pagesize)
+    GetAllAuthors(pageinit=0, pagesize=10)
     {
-        return { totalize:this.list.length, items:this.list}; 
+        throw new exception('Not yet implemented')
+        //return { totalize:this.list.length, items:this.list}; 
     }
 
-    GetAuthorByGender(gender, pageinit, pagesize)
+    GetAuthorByGender(gender, pageinit=0, pagesize=10)
     {
-        return { totalize:0, items:[]}; 
+
+        let result = this.list.filter(x=>x.gender === gender)
+
+        return { totalSize: result.length, items: result  }; 
     }
     
-    
-
-
-    
-
-
 
 }
 

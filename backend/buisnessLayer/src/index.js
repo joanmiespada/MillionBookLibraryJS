@@ -16,12 +16,20 @@ class _businesslibrary
         this.authorservice = aux.GenerateHundredAuthors()
         this.bookservice = aux.GenerateBooks( this.authorservice, bookservice.ONEMILLION )
 
-        let bookfirst = this.bookservice.GetAt(0);
+    }
+
+    test()
+    {
         
+        let res = this.authorservice.GetAuthorByGender('male')
+        console.log(res)
+        res = this.authorservice.GetAuthorByGender('female')
+        console.log(res)
     }
 
 }
 
-var businesslibrary = new _businesslibrary();
+var businesslibrary = new _businesslibrary()
+businesslibrary.test()
 
 export default businesslibrary

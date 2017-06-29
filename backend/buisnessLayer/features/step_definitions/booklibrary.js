@@ -1,6 +1,5 @@
 import {defineSupportCode} from 'cucumber'
 import chai from 'chai'
-import Book from '../../src/entities/book'
 import Author from '../../src/entities/author'
 import BookService from '../../src/services/bookservice'
 import SeedData from '../../src/seeddata/randomseed'
