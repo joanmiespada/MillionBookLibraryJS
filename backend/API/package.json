@@ -1,0 +1,22 @@
+{
+  "name": "API",
+  "version": "1.0.0",
+  "description": "Api layer",
+  "main": "index.js",
+  "repository": {},
+  "author": "Joanmi Espada",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^4.1.1",
+    "eslint-loader": "^1.8.0"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "webpack": "^3.0.0"
+  }
+}
