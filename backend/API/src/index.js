@@ -1,6 +1,5 @@
 import express from 'express'
 import request from './request'
-//import businesslayer from '../../buisnessLayer/build/script/businesslayer2.js'
 import bbl from '../../buisnessLayer/lib/businesslayer.js'
 //import businesslayer from 'businesslayer'
 
@@ -30,9 +29,8 @@ class API
 
 }
 
-var bl =  new bbl.businesslayer();
-var au1  = new bbl.author();
 
-var api = new API(bl);
+var api = new API( new bbl() ); //dependency injection
+
 api.setup();
 api.start();
