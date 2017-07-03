@@ -26,8 +26,9 @@
     "eslint-loader": "^1.8.0"
   },
   "scripts": {
-    "build": "./node_modules/.bin/webpack --config webpack.config.babel.js",
-    "test": "./node_modules/.bin/cucumber.js --compiler js:babel-core/register ",
+    "dev": "WEBPACK_ENV=dev webpack --progress --colors --watch",
+    "build": "WEBPACK_ENV=build webpack",
+    "test": "./node_modules/.bin/cucumberjs --compiler js:babel-core/register ",
     "seeddata": "babel-node ./src/seeddata/testseed.js"
   }
 }

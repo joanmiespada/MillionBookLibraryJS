@@ -9,7 +9,11 @@
     "no-unused-vars":"warn"
   },
   "globals": {
-
+    "document": false,
+    "escape": false,
+    "navigator": false,
+    "unescape": false,
+    "window": false
   },
   "extends": "eslint:recommended"
 }

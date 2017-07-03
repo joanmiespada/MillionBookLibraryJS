@@ -1,11 +1,11 @@
-import book from './entities/book'
-import author from './entities/author'
-import authorservice from './services/authorservice'
+//import book from './entities/book'
+//import author from './entities/author'
+//import authorservice from './services/authorservice'
 import bookservice from './services/bookservice'
 import RandomSeed from './seeddata/randomseed'
 
 
-class _businesslibrary
+class businesslibrary
 {
     constructor()
     {
@@ -16,6 +16,16 @@ class _businesslibrary
         this.authorservice = aux.GenerateHundredAuthors()
         this.bookservice = aux.GenerateBooks( this.authorservice, bookservice.ONEMILLION )
 
+    }
+
+    get Authors()
+    {
+        return this.authorservice;
+    }
+
+    get Books()
+    {
+        return this.bookservice;
     }
 
     /*test()
@@ -29,7 +39,7 @@ class _businesslibrary
 
 }
 
-var businesslibrary = new _businesslibrary()
+//var businesslibrary = new _businesslibrary()
 //businesslibrary.test()
 
 export default businesslibrary
