@@ -1,6 +1,6 @@
 
 
-class exception
+export default class exception
 {
     constructor(message)
     {
@@ -8,5 +8,3 @@ class exception
     }
 
 }
-
-export default exception

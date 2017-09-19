@@ -21,10 +21,8 @@ var config = {
   target:"node",
   output: {
     path: __dirname + '/build/script',
-    filename: outputFile,
-    library: libraryName,
-    libraryTarget: 'umd',
-    umdNamedDefine: true
+    filename: outputFile
+
   },
   module: {
     loaders: [

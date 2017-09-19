@@ -2,13 +2,11 @@
   "name": "buisnessLayer",
   "version": "1.0.0",
   "description": "business logic",
-  "main": "index.js",
+  "module": "src/index.js",
   "repository": {},
   "author": "joanmiespada",
   "license": "MIT",
-  "dependencies": {
-    "immutable": "^3.8.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
@@ -27,6 +25,7 @@
     "eslint": "^4.1.1",
     "eslint-loader": "^1.8.0",
     "husky": "^0.14.3",
+    "immutable": "^3.8.1",
     "lint-staged": "^4.2.1",
     "webpack": "^3.6.0"
   },
@@ -41,6 +40,9 @@
     "prepush": "lint-staged"
   },
   "lint-staged": {
-       "*.js": ["eslint --fix", "git add"]
-   }
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
 }

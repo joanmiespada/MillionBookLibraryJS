@@ -2,7 +2,7 @@ var path = require('path');
 
 module.exports = {
   name: 'server',
-  entry: ['babel-polyfill','./src/index.js'],
+  entry: ['babel-polyfill','./src/index_js'],
   target: 'node',
   output: {
     filename: 'API.js',

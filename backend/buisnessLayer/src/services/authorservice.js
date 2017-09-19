@@ -2,7 +2,7 @@ import service from './service'
 import exception from '../exceptions/exception'
 
 
-class authorservice extends service
+export default class authorservice extends service
 {
     constructor() {
         super();
@@ -16,5 +16,3 @@ class authorservice extends service
     }
 
 }
-
-export default authorservice;

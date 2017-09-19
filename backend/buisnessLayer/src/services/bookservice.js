@@ -1,6 +1,6 @@
 import service from './service'
 
-class bookservice extends service
+export default class bookservice extends service
 {
 
     static get ONEMILLION(){
@@ -40,12 +40,4 @@ class bookservice extends service
         return { totalSize: result.length, items: result  }
     }
 
-
-
-    
-
-
-
 }
-
-export default bookservice
