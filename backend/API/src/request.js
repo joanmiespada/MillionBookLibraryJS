@@ -11,7 +11,7 @@ class request
     request(req, res) {
 
         let businesslayer = new bbl();
-        let authors= businesslayer.Authors.GetAuthorByGender('male',0,10 );
+        let authors= businesslayer.Authors.getAuthorByGender('male',0,10 );
         //res.send('Hello World!');
         res.send(authors);
 

@@ -20,8 +20,10 @@
     "webpack": "^3.0.0"
   },
   "scripts": {
-    "dev": "WEBPACK_ENV=dev webpack --progress --colors --watch",
+    "dev": "WEBPACK_ENV=build webpack --progress --colors --watch",
+    "dev-win": "set WEBPACK_ENV=build&&webpack --progress --colors --watch",
     "build": "WEBPACK_ENV=build webpack",
+    "build-win": "set WEBPACK_ENV=build&&webpack",
     "start": "nodemon ./src/index.js --exec babel-node",
     "serve": "node ./build/script/API.js",
     "builder": "babel src -d dist"
