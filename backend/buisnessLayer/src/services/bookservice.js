@@ -7,29 +7,37 @@ class bookservice extends service
         return 1000000;
     }
 
-    GetAllBooks(pageinit,pagesize)
+
+    GetBooksByName(name,pageinit=1,pagesize=10)
     {
-        return { totalize:0, items:[]}; 
+        --pageinit;
+        let result = this.list.filter(x=>x.name === name).slice(pageinit * pagesize, (pageinit + 1) * pagesize);
+        return { totalSize: result.length, items: result  }
+
     }
 
-    GetBooksByName(name,pageinit,pagesize)
+    GetBooksByAuthorName(name, pageinit=1,pagesize=10)
     {
-        return { totalize:0, items:[]};
-    }
-
-    GetBooksByAuthorName(name, pageinit,pagesize)
-    {
-        return { totalize:0, items:[]};
+        --pageinit;
+        let result = this.list.filter(x=>x.author.name === name).slice(pageinit * pagesize, (pageinit + 1) * pagesize);
+        return { totalSize: result.length, items: result  }
     }
 
     GetBooksByGenre(genre, pageinit,pagesize)
     {
-        return { totalize:0, items:[]};
+        --pageinit;
+        let result = this.list.filter(x=>x.genre === genre).slice(pageinit * pagesize, (pageinit + 1) * pagesize);
+        return { totalSize: result.length, items: result  }
     }
 
     GetBooksByGenreAndPublishedDate(genre,publishdate, pageinit,pagesize)
     {
-        return { totalize:0, items:[]};
+        --pageinit;
+        let result = this.list.
+                        filter(x=>x.genre === genre).
+                        filter(d=>d.publishdate === publishdate).
+                        slice(pageinit * pagesize, (pageinit + 1) * pagesize);
+        return { totalSize: result.length, items: result  }
     }
 
 

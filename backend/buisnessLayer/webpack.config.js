@@ -5,8 +5,9 @@ var libraryName = 'businesslayer';
 
 var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var env = process.env.WEBPACK_ENV;
+console.log('Envioronment: ' + env);
 
-var plugins = [], outputFile;
+var plugins=[], outputFile;
 
 if (env === 'build') {
   plugins.push(new UglifyJsPlugin({ minimize: true }));

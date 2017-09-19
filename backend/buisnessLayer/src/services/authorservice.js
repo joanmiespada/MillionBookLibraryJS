@@ -4,27 +4,17 @@ import exception from '../exceptions/exception'
 
 class authorservice extends service
 {
-
-    constructor()
-    {
+    constructor() {
         super();
     }
 
-    GetAllAuthors(pageinit=0, pagesize=10)
-    {
-        throw new exception('Not yet implemented')
-        //return { totalize:this.list.length, items:this.list}; 
+    getAuthorByGender (gender, pageinit=1, pagesize=10) {
+
+        --pageinit;
+        let result = this.list.filter(x=>x.gender === gender).slice(pageinit * pagesize, (pageinit + 1) * pagesize);
+        return { totalSize: result.length, items: result  }
     }
-
-    GetAuthorByGender(gender, pageinit=0, pagesize=10)
-    {
-
-        let result = this.list.filter(x=>x.gender === gender)
-
-        return { totalSize: result.length, items: result  }; 
-    }
-    
 
 }
 
-export default authorservice
+export default authorservice;

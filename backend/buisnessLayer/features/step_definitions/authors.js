@@ -5,21 +5,22 @@ import AuthorService from '../../src/services/authorservice'
 import TestSeedData from '../../src/seeddata/testseed'
 
 defineSupportCode(function({Given, When, Then}) {
-    
+
+    let authorservice=null;
     
 
     Given(/^An authorservice with testdata loaded$/, function() {
         
-        this.authorservice = new AuthorService()
 
-        this.authorservice.Save( new TestSeedData().GenerateAuthors())
+
+        authorservice = new TestSeedData().GenerateAuthors()
         
     });
 
     When(/^I want filter authors by gender (.*)$/, 
         function (gender, callback) {
 
-          this.filtered= this.authorservice.GetAuthorByGender(gender).items;
+          this.filtered= authorservice.getAuthorByGender(gender).items;
                       
             callback()
           });

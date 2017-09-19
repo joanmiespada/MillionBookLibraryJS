@@ -7,7 +7,7 @@
   "author": "joanmiespada",
   "license": "MIT",
   "dependencies": {
-    "webpack": "^3.0.0"
+    "immutable": "^3.8.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -19,16 +19,28 @@
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.5.2",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
     "babel-register": "^6.24.1",
     "chai": "^4.0.2",
     "cucumber": "^2.3.1",
     "eslint": "^4.1.1",
-    "eslint-loader": "^1.8.0"
+    "eslint-loader": "^1.8.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.1",
+    "webpack": "^3.6.0"
   },
   "scripts": {
     "dev": "WEBPACK_ENV=dev webpack --progress --colors --watch",
+    "dev-win": "set WEBPACK_ENV=dev&&webpack --progress --colors --watch",
     "build": "WEBPACK_ENV=build webpack",
-    "test": "./node_modules/.bin/cucumberjs --compiler js:babel-core/register ",
-    "seeddata": "babel-node ./src/seeddata/testseed.js"
-  }
+    "build-win": "set WEBPACK_ENV=build&&webpack",
+    "test": "./node_modules/.bin/cucumberjs --compiler js:babel-core/register features",
+    "seeddata": "babel-node ./src/seeddata/testseed.js",
+    "precommit": "yarn test",
+    "prepush": "lint-staged"
+  },
+  "lint-staged": {
+       "*.js": ["eslint --fix", "git add"]
+   }
 }

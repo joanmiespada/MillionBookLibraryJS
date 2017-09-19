@@ -31,9 +31,9 @@ class businesslibrary
     /*test()
     {
         
-        let res = this.authorservice.GetAuthorByGender('male')
+        let res = this.authorservice.getAuthorByGender('male')
         console.log(res)
-        res = this.authorservice.GetAuthorByGender('female')
+        res = this.authorservice.getAuthorByGender('female')
         console.log(res)
     }*/
 

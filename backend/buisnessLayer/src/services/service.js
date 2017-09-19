@@ -1,33 +1,41 @@
+import exception from '../exceptions/exception';
+import Immutable from 'immutable';
 class service
-{	
+{
 
     constructor()
     {
         this.list=[];
     }
-    Save(newItemsList)
+    Save(xs)
     {
-      /*  let value = this.list.length;
+       this.list = [...xs];
+    }
 
-        newItemsList.forEach(function(element) {
-            element.Id =++value;
-        }, this);
-
-        let newlist= newItemsList.map(x=>{ let aux = Object.assign({},x); aux.Id = ++value; return aux });
-
-        this.list = Object.assign({},this.list,newItemsList);
-        */
-       this.list=newItemsList
+    Add(item)
+    {
+        this.list.push(item);
     }
 
     GetAt(index)
     {
+        if(index > this.list.length) throw exception('no enought items');
         return this.list[index];
     }
 
     Count()
     {
         return this.list.length;
+    }
+
+    GetAll(pageinit=1, pagesize=10)
+    {
+        --pageinit;
+        const aux= this.list.slice(pageinit * pagesize, (pageinit + 1) * pagesize);
+
+        const items = Immutable.fromJS(aux);
+
+        return { totalSize: this.list.length, items: items};
     }
 
 

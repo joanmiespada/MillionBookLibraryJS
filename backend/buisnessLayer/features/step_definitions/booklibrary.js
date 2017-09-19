@@ -3,6 +3,8 @@ import chai from 'chai'
 import Author from '../../src/entities/author'
 import BookService from '../../src/services/bookservice'
 import SeedData from '../../src/seeddata/randomseed'
+import Immutable from 'immutable'
+
 
 defineSupportCode(function({Given, When, Then}) {
     
@@ -18,9 +20,7 @@ defineSupportCode(function({Given, When, Then}) {
         function (callback) {
 
             let seeder = new SeedData();
-
             this.authorstore = seeder.GenerateHundredAuthors();
-                      
             callback()
           });
 
@@ -28,21 +28,24 @@ defineSupportCode(function({Given, When, Then}) {
         function (callback) {
 
             let seeder = new SeedData();
-
             this.booklib = seeder.GenerateBooks(this.authorstore, BOOKS)
-                      
             callback()
           });
 
-  Then(/^I should get a book randomly with one author$/, function () {
+      Then(/^I should get a book randomly with one author$/, function () {
 
-    let r = Math.floor(Math.random() * BOOKS);
-   
-    let book = this.booklib.GetAt(r)
+        let r = Math.floor(Math.random() * BOOKS);
+        let book = this.booklib.GetAt(r);
+        chai.expect(book.author).be.instanceOf( Author  );
 
+      });
 
-    chai.expect(book.author).be.instanceOf( Author  );
-    
-    
-  });
+      Then(/^I get all books$/, function () {
+
+            let books = this.booklib.GetAll(1,BOOKS);
+            const leng= books.items.valueSeq().count();
+            chai.expect(leng).equal( BOOKS  );
+
+      });
+
 });
